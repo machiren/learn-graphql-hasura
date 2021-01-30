@@ -4,6 +4,7 @@ import Error from 'next/error';
 import Image from 'next/image';
 import { useGetArticleQuery } from '../../../generated/graphql';
 import styles from './index.module.css';
+import { Article } from '../../../article/index';
 
 const ArticlePage: NextPage = () => {
   const router = useRouter();
@@ -22,7 +23,10 @@ const ArticlePage: NextPage = () => {
   if(!data || !data.articles_by_pk){
     return <Error statusCode={404} />
   }
-  const { user, subject, content } = data.articles_by_pk;
+  const { user, subject, content, publishedAt } = data.articles_by_pk;
+  if(!publishedAt){
+    return <Error statusCode={404} />
+  }
   return  (
     <div className={styles.contentContainer}>
       <h1 className={styles.subject}>{subject}</h1>
@@ -35,7 +39,9 @@ const ArticlePage: NextPage = () => {
           <span className={styles.userName}>{user.displayName}</span>
         </div>
       </div>
-      <div className={styles.content}>{content}</div>
+      <div className={styles.content}>
+        <Article content={content}></Article>
+        </div>
     </div>
   )
 }
