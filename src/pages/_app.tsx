@@ -3,6 +3,7 @@ import { ApolloProvider } from '@apollo/react-hooks';
 import { AppProps } from 'next/app';
 
 import 'minireset.css';
+import '../base.css';
 
 const httpLinkConfig: HttpOptions = {
   uri: 'http://localhost:8080/v1/graphql'
