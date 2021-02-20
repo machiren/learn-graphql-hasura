@@ -1,7 +1,7 @@
 import { useRouter } from "next/dist/client/router";
 import { NextPage } from 'next';
 import Error from 'next/error';
-import { useGetArticleQuery, useGetArticleLazyQuery } from '../../../generated/graphql';
+import { useGetArticleQuery } from '../../../generated/graphql';
 import { Article } from '../../../article/index';
 import { formatDate } from '../../../utils/date';
 import { SiteHeader } from '../../../components/site-header/index';
