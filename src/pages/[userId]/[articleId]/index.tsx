@@ -37,7 +37,7 @@ const ArticlePage: NextPage = () => {
         <h1 className={styles.subject}>{subject}</h1>
         <div className={styles.userContainer}>
           <div>
-            <img className={styles.userIcon} src="/profile.png" />
+            <img className={styles.userIcon} src="/profile.jpg" width="64px" height="64px" />
           </div>
           <div className={styles.userText}>
             <div className={styles.userId}>

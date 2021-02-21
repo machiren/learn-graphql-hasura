@@ -24,7 +24,7 @@ export const SiteHeader: React.FC<Props> = ({ left, right }) => {
   )
   const rightElement = right ? (right) :
   (
-    <img className={styles.userIcon} src="/profile.png" />
+    <img className={styles.userIcon} src="/profile.jpg" width="128px" height="128px" />
   )
   return (
     <header className={styles.header}>
